@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="button.js" defer></script>
+  </head>
+  <body>
+    <my-button
+      text="Atrapame"
+      deco="position: absolute;
+        transition: all 0.5s ease;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;"
+      id="a"
+    ></my-button>
+
+    <script>
+      function changeCaption() {
+        let btn = document.querySelector("my-button");
+        let words = ["Lentoo", "Tu puedes", "Intentalo"];
+        let randomIndex = Math.floor(Math.random() * words.length);
+        console.log(words[randomIndex]);
+        btn.setAttribute("text", words[randomIndex]);
+      }
+
+      let a = document.querySelector("my-button");
+      a.addEventListener("mouseover", changeCaption);
+    </script>
+  </body>
+</html>
